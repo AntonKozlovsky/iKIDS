@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Acme\DemoBundle\Entity\Book" table="Book">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name_rus" type="text" column="Namerus" nullable="true"/>
+    <field name="name_eng" type="text" column="Nameeng" nullable="true"/>	
+    <field name="description_eng" type="text" column="Descriptioneng" nullable="true"/>
+    <field name="description_rus" type="text" column="Descriptionrus" nullable="true"/>	
+    <field name="scheme" type="string" column="Scheme" length="255" nullable="true"/>
+    <field name="videourl" type="string" column="VideoURL" length="255" nullable="true"/>
+    <field name="thumburl" type="string" column="ThumbURL" length="255" nullable="true"/>
+    <field name="itunesurl_rus" type="string" column="itunesURLrus" length="255" nullable="true"/>
+	<field name="itunesurl_eng" type="string" column="itunesURLeng" length="255" nullable="true"/>
+    <field name="type" type="string" column="type" length="255" nullable="true"/>
+    <field name="education" type="integer" column="Education" nullable="true"/>	
+  </entity>
+</doctrine-mapping>
