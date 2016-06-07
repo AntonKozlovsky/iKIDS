@@ -1,6 +1,6 @@
 set :application, "iKIDS"
-set :domain,      "188.226.163.161"
-set :deploy_to,   "/var/www/php/ikids"
+set :domain,      "95.213.235.66"
+set :deploy_to,   "/var/www/ikids"
 set :app_path,    "app"
 
 set :repository,  "git@github.com:AntonKozlovsky/#{application}.git"
@@ -20,7 +20,7 @@ role :app,        domain, :primary => true       # This may be the same as your 
 role :db,         domain                         # This is where Symfony2 migrations will run
 
 set :shared_files,      ["app/config/parameters.yml"]
-set :shared_children,     [app_path + "/logs", web_path + "/uploads", "vendor"]
+set :shared_children,     [app_path + "/logs", web_path + "/uploads", "vendor",  "db"]
 set :dump_assetic_assets, true
 set :use_composer, true
 set :update_vendors, false
@@ -32,10 +32,10 @@ after "deploy", "deploy:cleanup"
 # Be more verbose by uncommenting the following line
 logger.level = Logger::MAX_LEVEL
 
-set :writable_dirs,     ["app/cache", "app/logs", "web/uploads"]
+set :writable_dirs,     ["app/cache", "app/logs", "web/uploads", "db"]
 set :webserver_user,    "www-data"
 set :permission_method, :acl
-set :use_set_permissions, false
+set :use_set_permissions, true
 
 # namespace :symfony do
 #   desc "Clear apc cache"
